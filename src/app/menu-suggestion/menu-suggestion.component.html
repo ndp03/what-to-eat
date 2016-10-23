@@ -1,0 +1,13 @@
+<h3>
+    List of dishes
+</h3>
+
+<ul class="dishes-list">
+   <li *ngFor="let d of dishes">
+        <app-dish [dish]="d" ></app-dish>
+   </li>
+</ul>
+
+<div>
+    <button type="button" class="btn btn-primary btn-sm" (click)="showMoreDishes($event)" >Show me more!</button>
+</div>

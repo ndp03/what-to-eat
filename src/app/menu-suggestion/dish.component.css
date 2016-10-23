@@ -1,0 +1,5 @@
+.dish-container .col {display: table-cell; vertical-align: middle;}
+.name {font-weight: bold; font-size: 1.2em;}
+.ingredents {border-radius: 5px; padding: 5px; background-color: #F5F6F7; }
+.food-img {height: 100px; width: 200px;}
+.food-img IMG {height: 100px; width: 100px;}
