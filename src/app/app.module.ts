@@ -24,7 +24,9 @@ import { XLarge } from './home/x-large';
 import { MenuSuggestionService } from './menu-suggestion/menu-suggestion.services';
 import { MenuSuggestionComponent } from './menu-suggestion/menu-suggestion.component';
 import { DishComponent } from './menu-suggestion/dish.component';
-
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { EditMealComponent } from './menu-admin/edit-meal/edit-meal.component';
+import { MealAdminService } from './menu-admin/shared/mealAdminService';
 
 
 // Application wide providers
@@ -50,8 +52,8 @@ type StoreType = {
     Home,
     NoContent,
     XLarge,
-    MenuSuggestionComponent,
-    DishComponent
+    MenuSuggestionComponent, DishComponent,
+    MenuAdminComponent, EditMealComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -62,7 +64,7 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    MenuSuggestionService
+    MenuSuggestionService, MealAdminService
   ]
 })
 export class AppModule {

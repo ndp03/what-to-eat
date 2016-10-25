@@ -62,7 +62,6 @@ module.exports = function(options) {
       'polyfills': './src/polyfills.browser.ts',
       'vendor':    './src/vendor.browser.ts',
       'main':      './src/main.browser.ts'
-
     },
 
     /*
@@ -173,7 +172,12 @@ module.exports = function(options) {
         {
           test: /\.(jpg|png|gif)$/,
           loader: 'file'
-        }
+        },
+
+        // for Bootstrap
+        { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+        { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
       ],
 
       postLoaders: [
@@ -195,6 +199,13 @@ module.exports = function(options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
+
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery'
+      }),
+      
       new AssetsPlugin({
         path: helpers.root('dist'),
         filename: 'webpack-assets.json',

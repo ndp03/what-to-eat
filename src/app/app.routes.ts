@@ -6,6 +6,7 @@ import { NoContent } from './no-content';
 import { DataResolver } from './app.resolver';
 
 import { MenuSuggestionComponent } from './menu-suggestion/menu-suggestion.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 
 export const ROUTES: Routes = [
   { path: '',      component: Home },
@@ -15,5 +16,6 @@ export const ROUTES: Routes = [
     path: 'detail', loadChildren: () => System.import('./+detail')
   },
   { path: 'menu', component: MenuSuggestionComponent },
+  { path: 'menu-admin', component: MenuAdminComponent },
   { path: '**',    component: NoContent },
 ];

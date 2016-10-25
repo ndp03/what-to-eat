@@ -1,0 +1,33 @@
+
+
+<h1>  
+    <span *ngIf="meal.name == false ">Add new meal</span> 
+    <span *ngIf="meal.name ">Edit {{meal.name}}</span> 
+</h1>
+
+
+<div>
+	<label>Name: </label>
+	<input [(ngModel)]="meal.name" placeholder="name">
+</div>
+<div>
+	<label>New ingredient: </label>
+	<input [(ngModel)]="newIng" placeholder="New ingredient" (keypress)="handleKeypress($event)">
+    <button type="button" class="btn btn-primary btn-sm" (click)="addNewIngredient($event)" >Add</button>
+</div>
+
+<div>
+    <label>Ingredients</label>
+    <ul>
+        <li *ngFor="let item of meal.ingredients; let i = index;" >
+            <span>{{i + 1}} - </span>
+            <span>{{item}} </span>
+            <span>
+                <a [attr.data-itemId]="i" (click)="removeIngredient(i)" class="action-link" > Remove </a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+
+<button type="button" class="btn btn-primary btn-sm" (click)="save($event)" >Save</button>
