@@ -1,0 +1,17 @@
+<h1>Step 2</h1>
+
+<form>
+    <div class="field-group">
+        <label for="">Bank name </label>
+        <span>{{model.bankName}}</span>
+    </div>
+
+    <div class="field-group">
+        <label for="comment-email">Account name <span class="aui-icon icon-required">(required)</span></label>
+        <input class="text medium-field" type="text" id="comment-email" name="comment-email" placeholder="you@example.com">
+    </div>
+
+    <button (click)="model.inc()">Foo {{ model.n }}</button>
+
+    <a [routerLink]=" ['../cobstep1'] ">Back to Step 1</a>
+</form>

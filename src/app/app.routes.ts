@@ -15,6 +15,9 @@ export const ROUTES: Routes = [
   {
     path: 'detail', loadChildren: () => System.import('./+detail')
   },
+  {
+    path: 'cob', loadChildren: () => System.import('./cob')
+  },
   { path: 'menu', component: MenuSuggestionComponent },
   { path: 'menu-admin', component: MenuAdminComponent },
   { path: '**',    component: NoContent },
